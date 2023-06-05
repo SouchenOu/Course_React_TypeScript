@@ -2,17 +2,26 @@ import {Fragment} from "react"
 
 function ListGroup()
 {
+    const items = ["New Nork", "San fransisco", "Tokyo", "London"]
     return (
+    /************WE CAN WRITE THIS WITH ANOTHER METHOD */
         //React Fragment is a feature in React that allows you to return multiple elements from a React component
+    // <Fragment>
+    //     <h1>This is the navbar</h1>
+    //         <ul className="list-group list-group-flush">
+    //     <li className="list-group-item">An item</li>
+    //     <li className="list-group-item">A second item</li>
+    //     <li className="list-group-item">A third item</li>
+    //     <li className="list-group-item">A fourth item</li>
+    //     <li className="list-group-item">And a fifth one</li>
+    //         </ul>
+    // </Fragment>
+    //**************************/
     <Fragment>
         <h1>This is the navbar</h1>
-            <ul className="list-group list-group-flush">
-        <li className="list-group-item">An item</li>
-        <li className="list-group-item">A second item</li>
-        <li className="list-group-item">A third item</li>
-        <li className="list-group-item">A fourth item</li>
-        <li className="list-group-item">And a fifth one</li>
-            </ul>
+        <ul className="list-group list-group-flush">
+            {items.map((item) => (<li>{item}</li>))}
+        </ul>
     </Fragment>
     );
 }
