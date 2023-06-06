@@ -1,4 +1,5 @@
 import {Fragment} from "react" 
+import { MouseEvent } from "react"
 
 function ListGroup()
 {
@@ -13,6 +14,7 @@ function ListGroup()
              <p>No item found</p>
             </>
         )
+    const handelClick = (event: MouseEvent) => console.log(event);
     return (
     /************WE CAN WRITE THIS WITH ANOTHER METHOD */
         //React Fragment is a feature in React that allows you to return multiple elements from a React component
@@ -35,7 +37,7 @@ function ListGroup()
             {items.length === 0 ? <p>No items</p> : null}
         <ul className="list-group list-group-flush">
             {items.map((item) => (<li className="list-group-item" key = {item}  onClick={() => console.log(item)}>{item}</li>))}
-            {cities.map((city, index) => (<li key = {city} onClick={()=> console.log(city, index)} >{city}</li>))}
+            {cities.map((city)=> (<li className="list-group-item" key = {city} onClick={handelClick}>{city}</li>))}
         </ul>
     </Fragment>
     );
