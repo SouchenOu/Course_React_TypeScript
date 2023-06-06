@@ -3,6 +3,7 @@ import {Fragment} from "react"
 function ListGroup()
 {
     const items = ["New Nork", "San fransisco", "Tokyo", "London"]
+    const   cities = ["Agadir", "Casablanca", "Tanger", "sala"]
 
     if(items.length == 0)
         return (
@@ -34,6 +35,7 @@ function ListGroup()
             {items.length === 0 ? <p>No items</p> : null}
         <ul className="list-group list-group-flush">
             {items.map((item) => (<li className="list-group-item" key = {item}  onClick={() => console.log(item)}>{item}</li>))}
+            {cities.map((city, index) => (<li key = {city} onClick={()=> console.log(city, index)} >{city}</li>))}
         </ul>
     </Fragment>
     );
