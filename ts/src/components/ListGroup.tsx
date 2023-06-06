@@ -2,7 +2,12 @@ import {Fragment} from "react"
 import { MouseEvent } from "react"
 import {useState} from "react"
 
-function ListGroup()
+interface Props {
+    elements: string[]; // array of string
+    heading: string; // a string variable
+}
+// props : Props (This means props of type Props)
+function ListGroup(props : Props)
 {
     const items = ["New Nork", "San fransisco", "Tokyo", "London"]
     const   cities = ["Agadir", "Casablanca", "Tanger", "sala"]
@@ -38,12 +43,14 @@ function ListGroup()
 
     // We can check if there is items or no outside here
     <Fragment>
-        <h1>This is the navbar</h1>
+        <h1>This is the navbar1</h1>
             {items.length === 0 ? <p>No items</p> : null}
         <ul className="list-group list-group-flush">
             {items.map((item, index) => (<li className={selectedIndex === index ? 'list-group-item active' : 'list-group-item' } key = {item}  onClick={() => console.log(item)}>{item}</li>))}
+            <h1>This is the navbar2</h1>
             {cities.map((city)=> (<li className="list-group-item" key = {city} onClick={handelClick}>{city}</li>))}
-            {countries.map((country, index)=> (<li className={selectedIndex === index ? 'list-group-item active' : 'list-group-item'} key = {country} onClick={() => setSelectedIndex(index)}>{country}</li>))}
+            <h1>This is the navbar3</h1>
+            {props.elements.map((element, index)=> (<li className={selectedIndex === index ? 'list-group-item active' : 'list-group-item'} key = {element} onClick={() => setSelectedIndex(index)}>{element}</li>))}
         </ul>
     </Fragment>
     );
