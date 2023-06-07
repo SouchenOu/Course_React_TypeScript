@@ -1,6 +1,7 @@
 import Message from './Message';
 import ListGroup from './components/ListGroup'
 import ListGroupTest from './components/ListGroupTest';
+import Allert from './components/Allert';
 
 function App(){
 
@@ -12,6 +13,7 @@ function App(){
   }
   return <div><ListGroup elements= {elements} heading = "numbers" functionTest={functionFirst}></ListGroup>
     <ListGroupTest array={arr} test = "souchen"></ListGroupTest>
+    <Allert>hello <span>souchen</span> </Allert>
   </div>;
 }
 
