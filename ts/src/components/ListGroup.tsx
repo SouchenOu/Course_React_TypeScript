@@ -5,9 +5,12 @@ import {useState} from "react"
 interface Props {
     elements: string[]; // array of string
     heading: string; // a string variable
+    functionTest: (element: string) => void; // function
 }
 // props : Props (This means props of type Props)
-function ListGroup(props : Props)
+
+function ListGroup({elements, heading, functionTest}: Props)
+//function ListGroup(props : Props)
 {
     const items = ["New Nork", "San fransisco", "Tokyo", "London"]
     const   cities = ["Agadir", "Casablanca", "Tanger", "sala"]
@@ -50,7 +53,9 @@ function ListGroup(props : Props)
             <h1>This is the navbar2</h1>
             {cities.map((city)=> (<li className="list-group-item" key = {city} onClick={handelClick}>{city}</li>))}
             <h1>This is the navbar3</h1>
-            {props.elements.map((element, index)=> (<li className={selectedIndex === index ? 'list-group-item active' : 'list-group-item'} key = {element} onClick={() => setSelectedIndex(index)}>{element}</li>))}
+            {elements.map((element, index)=> (<li className={selectedIndex === index ? 'list-group-item active' : 'list-group-item'} key = {element} 
+            onClick={() => { setSelectedIndex(index); functionTest(element);}}>{element}</li>))}
+            
         </ul>
     </Fragment>
     );

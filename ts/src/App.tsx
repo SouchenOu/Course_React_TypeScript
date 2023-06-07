@@ -4,7 +4,11 @@ import ListGroup from './components/ListGroup'
 function App(){
 
   let elements = ["hello", "souchen", "from 1337"]
-  return <div><ListGroup elements= {elements} heading = "numbers"></ListGroup>
+  const functionFirst = () =>
+  {
+    console.log("This is a function");
+  }
+  return <div><ListGroup elements= {elements} heading = "numbers" functionTest={functionFirst}></ListGroup>
   
   </div>;
 }
