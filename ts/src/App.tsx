@@ -13,7 +13,7 @@ function App(){
     console.log("This is a function");
   }
   return <div>
-    <button onClick={()=> console.log("clicked")} color="secondary">My button</button>
+    <button onClick={()=> console.log("clicked")} color="secondary">button</button>
     <ListGroup elements= {elements} heading = "numbers" functionTest={functionFirst}></ListGroup>
     <Allert>hello <span>souchen</span> </Allert>
     
