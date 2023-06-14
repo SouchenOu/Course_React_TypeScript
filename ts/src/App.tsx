@@ -2,6 +2,7 @@ import Message from './Message';
 import ListGroup from './components/ListGroup'
 import ListGroupTest from './components/ListGroupTest';
 import Allert from './components/Allert';
+import button from './components/button';
 
 function App(){
 
@@ -11,9 +12,11 @@ function App(){
   {
     console.log("This is a function");
   }
-  return <div><ListGroup elements= {elements} heading = "numbers" functionTest={functionFirst}></ListGroup>
-    <ListGroupTest array={arr} test = "souchen"></ListGroupTest>
+  return <div>
+    <button onClick={()=> console.log("clicked")} color="secondary">My button</button>
+    <ListGroup elements= {elements} heading = "numbers" functionTest={functionFirst}></ListGroup>
     <Allert>hello <span>souchen</span> </Allert>
+    
   </div>;
 }
 
