@@ -1,23 +1,19 @@
-import { Fragment } from "react";
+
+import { Fragment } from "react"
 
 
-interface struct {
-    array : string[];
-    test : string;
-}
-function ListGroupTest(Struct : struct)
+
+function ListGroupTest()
 {
-    var tables= ["T1", "T2","T3", "T4"];
+    let arr = ["S1","S2","S3","S4"]
+
     return (
-    <Fragment>
-        <h1>Test2</h1>
-        <ul>
-            {Struct.array.map((tab) => (<li className="" onClick={()=> console.log(Struct.test)}>{tab}</li>))}
-        </ul>
-    </Fragment>
+        <Fragment>
+            <h1>Hello</h1>
+            <ul>
+                {arr.map((arrs)=>(<li className="" onClick={()=> console.log("hello souchen")}></li>))}
+            </ul>
+        </Fragment>
     )
 }
-
-
-
-export default ListGroupTest;
+export default ListGroupTest
