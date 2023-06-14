@@ -3,6 +3,7 @@ import ListGroup from './components/ListGroup'
 import ListGroupTest from './components/ListGroupTest';
 import Allert from './components/Allert';
 import button from './components/button';
+import {useState} from "react"
 
 function App(){
 
@@ -12,8 +13,11 @@ function App(){
   {
     console.log("This is a function");
   }
+
+  const [alertVisible, setAlertVisibility] = useState(false)
   return <div>
-    <button onClick={()=> console.log("clicked")} color="secondary">button</button>
+    <button onClick={()=> setAlertVisibility(true)} color="secondary">button</button>
+    {alertVisible && <Allert>allert</Allert>}
     <ListGroup elements= {elements} heading = "numbers" functionTest={functionFirst}></ListGroup>
     <Allert>hello <span>souchen</span> </Allert>
     
